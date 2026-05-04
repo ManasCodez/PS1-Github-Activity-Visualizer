@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 const TOKEN = process.env.GITHUB_TOKEN;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, '..')));
 
 // Route to fetch GitHub user data
 app.get("/user/:username", async (req, res) => {
